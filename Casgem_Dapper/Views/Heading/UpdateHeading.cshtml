@@ -1,0 +1,40 @@
+﻿@model Casgem_Dapper.DAL.Headings
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <br />
+    <form method="post">
+        <input type="hidden" class="form-control" asp-for="HeadingID" />
+        <label>Başlık Adı</label>
+        <input type="text" class="form-control" asp-for="HeadingName" />
+        <br />
+        <label>Başlık Durumu</label>
+
+        @if (Model.HeadingStatus==true)
+        {
+
+            <input type="radio"  name="HeadingStatus" value="True" checked> <span>Aktif</span>
+            <input type="radio"  name="HeadingStatus" value="False"  > <span>Pasif</span>
+
+        }
+        else
+        {
+            <input type="radio" name="HeadingStatus" value="True"> <span>Aktif</span>
+            <input type="radio" name="HeadingStatus" value="False" checked> <span>Pasif</span>
+        }
+
+      
+        
+
+
+       @* <input type="text" class="form-control" asp-for="HeadingStatus" />*@
+        <br />
+        <input type="submit" value="Güncelle" class="btn btn-success" />
+    </form>
+</div>
+
